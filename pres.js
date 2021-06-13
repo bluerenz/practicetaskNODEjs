@@ -215,3 +215,142 @@
 //   console.log(a, b, c);
 // }
 // getText(...args);//es6
+//                       6/ literali
+
+// function getCar(make, model, value) {
+//     return {
+//         // с синтаксисом короткой записи можно
+//         // пропускать значение свойства, если оно
+//         // совпадает с именем переменной, значение
+//         // которой мы хотим использовать
+//         make,  // аналогично make: make
+//         model, // аналогично model: model
+//         value, // аналогично value: value
+
+//         // вычисляемые свойства теперь работают в
+//         // литералах объекта
+//         ['make' + make]: true,
+
+//         // Короткая запись метода объекта пропускает
+//         // ключевое слово `function` и двоеточие. Вместо
+//         // "depreciate: function() {}" можно написать:
+//         depreciate() {
+//             this.value -= 2500;
+//         }
+//     };
+// }
+
+//                      7. Destructuring arrays and objects
+// var obj = {
+//     width: 100
+// }
+
+// console.log(obj.width)
+// var { width } = {
+//     width: 100
+//   }
+
+// var { width, height } = {
+//     width: 100,
+//     height: 200
+// };
+
+// function generateObj () {
+//     return {
+//       width: 100,
+//       height: 200
+//     };
+//   }
+  
+//   var { width, height } = generateObj();
+
+//   function generateObj () {
+//     return {
+//       title: 'Menu',
+//       width: 100,
+//       height: 200
+//     };
+//   }
+  
+//   var { width: containerWidth, height: containerHeight } = generateObj();
+//   console.log(containerWidth);
+//   console.log(containerHeight);
+  
+//   var obj = {
+//     id: '123',
+//     attributes: {
+//       width: 100,
+//       height: 100
+//     }
+//   }
+//   var { id, attributes: { width, height } } = obj;
+// console.log(id)
+// console.log(width)
+// console.log(height)
+
+// var { id, attributes: { width = 50, height = 50 } } = obj;
+
+
+// var [ red, yellow ] = ['red', 'yellow'];
+// console.log(red);
+// console.log(yellow);
+
+
+// var [first, , , , fifth] = ['red', 'yellow', 'green', 'blue', 'orange'];
+// function getSizes ({ width, height }) {
+//     console.log(width)
+//     console.log(height)
+//   }
+  
+//   getSizes({
+//     width: 100,
+//     height: 200
+//   })
+
+//                                  for of for in 
+//for...of используется для перебора в цикле итерируемых объектов, например, массивов.
+// let nicknames = ['di', 'boo', 'punkeye'];
+// nicknames.size = 3;
+// for (let nickname of nicknames) {
+//     console.log(nickname);
+// }
+// // di
+// // boo
+// // punkeye
+
+
+// //for...in используется для перебора в цикле всех доступных для перебора (enumerable) свойств объекта.
+// let nicknames = ['di', 'boo', 'punkeye'];
+// nicknames.size = 3;
+// for (let nickname in nicknames) {
+//     console.log(nickname);
+// }
+// // 0
+// // 1
+// // 2
+// // size
+
+// //class super
+// class SimpleDate {
+//     constructor (year, month, day) {
+//       this.year = year;
+//       this.month = month;
+//       this.day = day;
+//     }
+//     toString () {
+//       return `${this.day}/${this.month}/${this.year}`;
+//     }
+//   }
+  
+//   const today = new SimpleDate(2017, 1, 28)
+//   console.log(today.toString())
+//   class OtherDate extends SimpleDate {
+//     constructor(year, month, day) {
+//       super(year, month, day)
+//     }
+//     toString () {
+//         return `${this.day}.${this.month}.${this.year}`;
+//       }
+//   }
+//   const tomorrow = new OtherDate(2017, 1, 29)
+//   console.log(tomorrow.toString())
